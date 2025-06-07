@@ -1,3 +1,4 @@
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -7,6 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Navbar scroll behavior
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
@@ -28,6 +30,7 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
+// Animate performance bars (placeholder since no .bar-fill elements are in current HTML)
 const bars = document.querySelectorAll('.bar-fill');
 
 const animatePerformance = (entries, observer) => {
@@ -46,6 +49,7 @@ const performanceObserver = new IntersectionObserver(animatePerformance, {
     threshold: 0.5
 });
 
+// Feature card hover effects
 const featureCards = document.querySelectorAll('.feature-v2-card');
 
 featureCards.forEach(card => {
@@ -60,20 +64,22 @@ featureCards.forEach(card => {
     });
 });
 
+// Tool card icon hover effects (placeholder since no .tool-icon elements)
 const toolCards = document.querySelectorAll('.tool-card');
 
 toolCards.forEach(card => {
     const icon = card.querySelector('.tool-icon');
 
     card.addEventListener('mouseenter', () => {
-        icon.style.transform = 'scale(1.1) rotate(5deg)';
+        if (icon) icon.style.transform = 'scale(1.1) rotate(5deg)';
     });
 
     card.addEventListener('mouseleave', () => {
-        icon.style.transform = 'scale(1) rotate(0)';
+        if (icon) icon.style.transform = 'scale(1) rotate(0)';
     });
 });
 
+// Animate stat values
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-value');
 
@@ -108,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => statsObserver.observe(stat));
 });
 
+// Toggle FAQ items
 function toggleFAQ(element) {
     const faqItem = element.parentElement;
     const isActive = faqItem.classList.contains('active');
@@ -120,3 +127,22 @@ function toggleFAQ(element) {
         faqItem.classList.add('active');
     }
 }
+
+// Update live Discord member count (placeholder API call)
+async function updateMemberCount() {
+    try {
+        const response = await fetch('https://your-vercel-app.vercel.app/api/member-count'); // Replace with your actual endpoint
+        const data = await response.json();
+        const statValue = document.querySelector('.stat-value');
+        if (statValue && data.memberCount) {
+            statValue.dataset.value = data.memberCount; // Update the data attribute for animation
+            statValue.textContent = data.memberCount; // Immediate update
+        }
+    } catch (error) {
+        console.error('Error fetching member count:', error);
+    }
+}
+
+// Update every 60 seconds and on load
+setInterval(updateMemberCount, 60000);
+updateMemberCount(); // Initial call
