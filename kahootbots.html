@@ -9,6 +9,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        header {
+            background: var(--surface);
+            padding: 2rem;
+            text-align: center;
+            font-size: 2.5rem;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--text);
+            text-shadow: 0 0 10px var(--primary);
+            box-shadow: 0 4px 20px rgba(255, 68, 68, 0.4);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2rem;
+        }
+        main.script-card {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            background: var(--black-secondary);
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow);
+            position: relative;
+            z-index: 1;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 0.6rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="number"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 68, 68, 0.6);
+        }
+        button.copy-btn {
+            margin-top: 0.6rem;
+        }
+        #status {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 0.6rem;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <div class="background-effects">
@@ -35,23 +84,21 @@
         </div>
     </nav>
 
-    <header style="background: var(--surface); padding: 2rem; text-align: center; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; color: var(--text); text-shadow: 0 0 10px var(--primary); box-shadow: 0 4px 20px rgba(255, 68, 68, 0.4); position: relative; z-index: 1;">
-        Watermelon Company's Kahoot Bots
-    </header>
+    <header>Watermelon Company's Kahoot Bots</header>
 
-    <main class="script-card" style="max-width: 400px; margin: 2rem auto; padding: 1.5rem; background: var(--black-secondary); border-radius: 12px; box-shadow: 0 4px 12px var(--shadow); position: relative; z-index: 1;">
+    <main class="script-card">
         <form id="botForm">
             <label for="gamePin" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Game PIN:</label>
-            <input type="text" id="gamePin" name="gamePin" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
+            <input type="text" id="gamePin" name="gamePin" required>
             <label for="nickname" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Nickname:</label>
-            <input type="text" id="nickname" name="nickname" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
+            <input type="text" id="nickname" name="nickname" required>
             <label for="amount" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Number of Bots:</label>
-            <input type="number" id="amount" name="amount" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
-            <button type="submit" class="copy-btn" style="margin-top: 0.6rem;">
+            <input type="number" id="amount" name="amount" required>
+            <button type="submit" class="copy-btn">
                 <span>Start</span>
             </button>
         </form>
-        <div id="status" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center;"></div>
+        <div id="status"></div>
         <a href="tools.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back to Tools</a>
     </main>
 
