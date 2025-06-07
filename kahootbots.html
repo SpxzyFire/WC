@@ -35,29 +35,25 @@
         </div>
     </nav>
 
-    <section class="kahoot-bots" id="kahoot-bots" style="min-height: 80vh; display: flex; justify-content: center; align-items: center;">
-        <div class="script-card" style="max-width: 400px; padding: 1rem; text-align: center; background: var(--black-secondary);">
-            <h3 style="font-size: 2rem; color: #FF4444; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif;">Kahoot Bot Sender</h3>
-            <div class="image-container">
-                <img src="Assets/kahoot.png" alt="Kahoot Bot Image" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
-            </div>
-            <p style="font-size: 1.2rem; color: var(--text-primary); margin: 0.6rem 0;">Best and Working Kahoot Bot Sender</p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">Tools last update: 2025-06-07</p>
-            <form id="botForm" style="margin: 0.6rem 0;">
-                <label for="gamePin" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Game PIN:</label>
-                <input type="text" id="gamePin" name="gamePin" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem;">
-                <label for="nickname" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Nickname:</label>
-                <input type="text" id="nickname" name="nickname" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem;">
-                <label for="amount" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Number of Bots:</label>
-                <input type="number" id="amount" name="amount" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem;">
-                <button type="submit" class="copy-btn" style="margin-top: 0.6rem;">
-                    <span>Start</span>
-                </button>
-            </form>
-            <div id="status" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.6rem;"></div>
-            <a href="tools.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back to Tools</a>
-        </div>
-    </section>
+    <header style="background: var(--surface); padding: 2rem; text-align: center; font-size: 2.5rem; font-family: 'Orbitron', sans-serif; color: var(--text); text-shadow: 0 0 10px var(--primary); box-shadow: 0 4px 20px rgba(255, 68, 68, 0.4); position: relative; z-index: 1;">
+        Watermelon Company's Kahoot Bots
+    </header>
+
+    <main class="script-card" style="max-width: 400px; margin: 2rem auto; padding: 1.5rem; background: var(--black-secondary); border-radius: 12px; box-shadow: 0 4px 12px var(--shadow); position: relative; z-index: 1;">
+        <form id="botForm">
+            <label for="gamePin" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Game PIN:</label>
+            <input type="text" id="gamePin" name="gamePin" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
+            <label for="nickname" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Nickname:</label>
+            <input type="text" id="nickname" name="nickname" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
+            <label for="amount" style="font-size: 0.9rem; color: var(--text-secondary); display: block; margin-bottom: 0.2rem;">Number of Bots:</label>
+            <input type="number" id="amount" name="amount" required style="width: 100%; padding: 0.6rem; margin-bottom: 0.6rem; border: none; border-radius: 8px; background: rgba(255, 255, 255, 0.05); color: var(--text-primary); font-size: 0.9rem; transition: all 0.3s ease;">
+            <button type="submit" class="copy-btn" style="margin-top: 0.6rem;">
+                <span>Start</span>
+            </button>
+        </form>
+        <div id="status" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.6rem; text-align: center;"></div>
+        <a href="tools.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back to Tools</a>
+    </main>
 
     <footer class="footer">
         <div class="footer-content">
