@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin-top: 10vh; /* Adjust this value to move the navbar further down (e.g., 10vh, 15vh, etc.) */
+            margin-top: 10vh; /* Keeps the navbar lower as per your request */
         }
         main.script-card {
             max-width: 400px;
@@ -113,6 +113,11 @@
     </footer>
 
     <script>
+        // Warn user before unloading the page
+        window.onbeforeunload = function() {
+            return "Refreshing or closing this page may break the bot session. Are you sure you want to continue?";
+        };
+
         document.getElementById("botForm").onsubmit = function (event) {
             event.preventDefault();
             const formData = new FormData(this);
