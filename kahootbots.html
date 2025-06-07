@@ -1,1 +1,226 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watermelon Company's Kahoot Bots</title>
+    <style>
+      /* General resets and fonts */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #1a1a1a;
+        color: #eee;
+        overflow: hidden;
+        position: relative;
+        height: 100vh;
+      }
+
+      /* Liquid-like neon bubble effect */
+      .neon-bubble {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 255, 0, 0.7),
+          transparent 70%
+        );
+        z-index: 0;
+        animation: liquidNeon 10s infinite ease-in-out,
+          pulse 4s infinite ease-in-out;
+        filter: blur(20px);
+        pointer-events: none;
+      }
+
+      /* Position multiple neon bubbles */
+      .bubble1 {
+        top: -50px;
+        left: -50px;
+        animation-delay: -2s;
+      }
+      .bubble2 {
+        top: 100px;
+        right: 100px;
+        animation-delay: -3s;
+      }
+      .bubble3 {
+        bottom: -50px;
+        left: 150px;
+        animation-delay: -1s;
+      }
+      .bubble4 {
+        top: 200px;
+        left: 250px;
+        animation-delay: -1.5s;
+      }
+      .bubble5 {
+        bottom: 100px;
+        right: 250px;
+        animation-delay: 0s;
+      }
+
+      /* Liquid movement effect */
+      @keyframes liquidNeon {
+        0% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+          opacity: 0.5;
+        }
+        25% {
+          transform: translate(100px, -100px) scale(1.1) rotate(15deg);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translate(-100px, 100px) scale(1.2) rotate(30deg);
+          opacity: 0.7;
+        }
+        75% {
+          transform: translate(150px, 50px) scale(1.15) rotate(45deg);
+          opacity: 0.9;
+        }
+        100% {
+          transform: translate(-50px, -150px) scale(1.2) rotate(90deg);
+          opacity: 0.6;
+        }
+      }
+
+      /* Pulse effect to create the glowing neon flicker */
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.25);
+        }
+      }
+
+      /* Neon Header */
+      header {
+        background: linear-gradient(
+          90deg,
+          #006400,
+          #32cd32
+        ); /* Darker to lighter green gradient */
+        color: white;
+        padding: 30px;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.5),
+          0 0 20px rgba(0, 255, 0, 0.7), 0 0 30px rgba(0, 255, 0, 1); /* White text with subtle neon green glow */
+        box-shadow: 0 4px 20px rgba(0, 255, 0, 0.4);
+        z-index: 1;
+        position: relative;
+      }
+
+      main {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 30px;
+        background-color: #2b2b2b;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4);
+        z-index: 1;
+        position: relative;
+      }
+
+      label {
+        margin: 10px 0 5px;
+        display: block;
+        color: #ccc;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 5px;
+        background: #444;
+        color: white;
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+      }
+
+      button {
+        width: 100%;
+        padding: 12px;
+        background-color: #006400; /* Darker green background */
+        color: white;
+        border: 2px solid #00ff00; /* Lighter green outline */
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+      }
+
+      button:hover {
+        background-color: #32cd32; /* Lighter green on hover */
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+      }
+
+      #status {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #ffccff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Watermelon Company's Kahoot Bots</header>
+    <main>
+      <form id="botForm">
+        <label for="gamePin">Game PIN:</label>
+        <input type="text" id="gamePin" name="gamePin" required />
+        <label for="nickname">Nickname:</label>
+        <input type="text" id="nickname" name="nickname" required />
+        <label for="amount">Number of Bots:</label>
+        <input type="number" id="amount" name="amount" required />
+        <button type="submit">Start</button>
+      </form>
+      <div id="status"></div>
+    </main>
+
+    <!-- Multiple Neon Bubbles -->
+    <div class="neon-bubble bubble1"></div>
+    <div class="neon-bubble bubble2"></div>
+    <div class="neon-bubble bubble3"></div>
+    <div class="neon-bubble bubble4"></div>
+    <div class="neon-bubble bubble5"></div>
+
+    <script>
+      document.getElementById("botForm").onsubmit = function (event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        fetch("/start", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("status").innerText = data.status;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      };
+    </script>
+  </body>
+</html>
