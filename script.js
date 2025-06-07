@@ -1,7 +1,7 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
+    anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(anchor.getAttribute('href')).scrollIntoView({
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
     });
@@ -12,10 +12,12 @@ let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
+
     if (currentScroll <= 0) {
         navbar.classList.remove('scroll-up');
         return;
     }
+
     if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
         navbar.classList.remove('scroll-up');
         navbar.classList.add('scroll-down');
@@ -26,67 +28,95 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-const featureCards = document.querySelectorAll('.feature-v2-card');
-featureCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.animation = 'glitch 0.3s linear';
-        setTimeout(() => card.style.animation = '', 300);
-    });
-});
+const bars = document.querySelectorAll('.bar-fill');
 
-const stats = document.querySelectorAll('.stat-value');
-const animateStats = (entries, observer) => {
+const animatePerformance = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const target = entry.target;
-            const value = parseInt(target.textContent.replace(/[^0-9]/g, '')) || 0;
-            let current = 0;
-            const increment = value / 60;
-            const update = () => {
-                if (current < value) {
-                    current += increment;
-                    target.textContent = Math.ceil(current) + (target.textContent.includes('K') ? 'K+' : 'ms');
-                    requestAnimationFrame(update);
-                } else {
-                    target.textContent = target.dataset.value || target.textContent;
-                }
-            };
-            update();
-            observer.unobserve(target);
+            bars.forEach(bar => {
+                bar.style.width = bar.dataset.width || '90%';
+                bar.style.opacity = 1;
+            });
+            observer.unobserve(entry.target);
         }
     });
 };
 
-const statsObserver = new IntersectionObserver(animateStats, { threshold: 0.5 });
-stats.forEach(stat => {
-    stat.dataset.value = stat.textContent;
-    statsObserver.observe(stat);
+const performanceObserver = new IntersectionObserver(animatePerformance, {
+    threshold: 0.5
+});
+
+const featureCards = document.querySelectorAll('.feature-v2-card');
+
+featureCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px)';
+        card.style.boxShadow = '0 10px 30px rgba(98, 173, 255, 0.2)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = 'none';
+    });
+});
+
+const toolCards = document.querySelectorAll('.tool-card');
+
+toolCards.forEach(card => {
+    const icon = card.querySelector('.tool-icon');
+
+    card.addEventListener('mouseenter', () => {
+        icon.style.transform = 'scale(1.1) rotate(5deg)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+        icon.style.transform = 'scale(1) rotate(0)';
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const stats = document.querySelectorAll('.stat-value');
+
+    const animateStats = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = entry.target;
+                const value = parseInt(target.dataset.value);
+                let current = 0;
+
+                const updateCounter = () => {
+                    const increment = value / 50;
+                    if (current < value) {
+                        current += increment;
+                        target.textContent = Math.ceil(current).toString();
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        target.textContent = value;
+                    }
+                };
+
+                updateCounter();
+                observer.unobserve(target);
+            }
+        });
+    };
+
+    const statsObserver = new IntersectionObserver(animateStats, {
+        threshold: 0.5
+    });
+
+    stats.forEach(stat => statsObserver.observe(stat));
 });
 
 function toggleFAQ(element) {
     const faqItem = element.parentElement;
     const isActive = faqItem.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
-    if (!isActive) faqItem.classList.add('active');
-}
 
-const buttons = document.querySelectorAll('.btn-primary, .btn-outline');
-buttons.forEach(button => {
-    button.addEventListener('mouseenter', () => {
-        button.style.animation = 'pulse 0.5s ease';
-        setTimeout(() => button.style.animation = '', 500);
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
     });
-});
 
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes glitch {
-        0% { transform: translate(0); }
-        20% { transform: translate(-2px, 2px); }
-        40% { transform: translate(2px, -2px); }
-        60% { transform: translate(-2px, 2px); }
-        80% { transform: translate(2px, -2px); }
-        100% { transform: translate(0); }
+    if (!isActive) {
+        faqItem.classList.add('active');
     }
-`;
-document.head.appendChild(style);
+}
