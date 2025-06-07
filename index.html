@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watermelon Company</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-effects">
@@ -19,70 +19,39 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-brand">
-                <img src="/Watermelon Company.png" alt="Watermelon Logo" class="brand-logo">
-            </a>
+            <div class="nav-brand">
+                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="brand-logo">
+            </div>
             <div class="nav-menu">
-                <a href="#features" class="nav-item">What you get From us</a>
-                <a href="#showcase" class="nav-item">Showcase</a>
-                <a href="#faq" class="nav-item">FAQ</a>
+                <a href="#features" class="nav-item">Features</a>
+                <a href="#tools" class="nav-item">Tools</a>
             </div>
             <div class="nav-actions">
-                <a href="https://discord.gg/watermeloncompany" class="btn-discord">
-                    <i class="fab fa-discord"></i> Join Discord
-                </a>
+                <a href="https://discord.gg/example" class="btn-discord">Join Discord</a>
             </div>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-container">
             <div>
-                <div class="hero-badge">
-                    <span class="badge-glow"></span>
-                    <span class="badge-icon"><img src="/Watermelon Company.png" alt="Badge Icon" style="width: 1.2rem; height: 1.2rem;"></span>
-                    <span class="badge-text">Most Advanced Community</span>
-                </div>
-                <h1 class="hero-title">Welcome to <span class="gradient-text">Watermelon Company</span></h1>
+                <div class="hero-badge"><span class="badge-glow"></span>Most Advanced Community</div>
+                <h1 class="hero-title"><span class="gradient-text">Welcome to Watermelon Company</span></h1>
                 <p class="hero-description">Join our juicy community and enjoy the sweetest Discord experience!</p>
                 <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-value" data-value="0">0</div>
-                        <div class="stat-label">Active Members</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" data-value="100">100</div>
-                        <div class="stat-label">Events Hosted</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-value" data-value="500">500</div>
-                        <div class="stat-label">Giveaways</div>
-                    </div>
+                    <div class="stat-card"><div class="stat-value" data-value="0">0</div><div class="stat-label">Active Members</div></div>
+                    <div class="stat-card"><div class="stat-value" data-value="100">100</div><div class="stat-label">Events Hosted</div></div>
+                    <div class="stat-card"><div class="stat-value" data-value="500">500</div><div class="stat-label">Giveaways</div></div>
                 </div>
                 <div class="hero-actions">
-                    <a href="https://discord.gg/watermeloncompany" class="btn-primary">
-                        <i class="fas fa-download"></i> Join Now
-                    </a>
-                    <a href="#showcase" class="btn-outline scroll-to-showcase">
-                        <i class="fas fa-play"></i> Watch Demo
-                    </a>
+                    <a href="https://discord.gg/example" class="btn-primary">Join Now</a>
+                    <a href="#showcase" class="btn-outline">Watch Demo</a>
                 </div>
             </div>
             <div class="code-preview">
-                <div class="preview-header">
-                    <div class="window-controls">
-                        <span><img src="/Watermelon Company.png" alt="Control" style="width: 0.8rem; height: 0.8rem;"></span>
-                        <span><img src="/Watermelon Company.png" alt="Control" style="width: 0.8rem; height: 0.8rem;"></span>
-                        <span><img src="/Watermelon Company.png" alt="Control" style="width: 0.8rem; height: 0.8rem;"></span>
-                    </div>
-                    <div class="preview-tabs">
-                        <span class="tab active">main.lua</span>
-                    </div>
-                </div>
+                <div class="preview-header">main.lua</div>
                 <div class="preview-editor">
-                    <div class="line-numbers">
-                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span>
-                    </div>
+                    <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
                     <div class="code-content">
                         -- Initialize Watermelon<br>
                         local watermelon = require("watermelon")<br>
@@ -94,139 +63,100 @@
                         local success = watermelon:execute(script)
                     </div>
                 </div>
-                <div class="preview-glow"></div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features-v2">
-        <div class="section-header">
-            <h2>Features</h2>
-            <p>Experience the power of Watermelon Company</p>
-        </div>
+    <section class="features-v2" id="features">
+        <div class="section-header"><h2>Features</h2></div>
         <div class="features-v2-grid">
             <div class="feature-v2-card">
-                <div class="feature-v2-icon"><img src="/Watermelon Company.png" alt="Icon" style="width: 2rem; height: 2rem;"></div>
+                <div class="feature-v2-icon"></div>
                 <h3>Active Money/Giveaway Codes</h3>
-                <p>We host more then 5-10 codes per day!</p>
+                <p>We host more than 5-10 codes per day!</p>
             </div>
             <div class="feature-v2-card">
-                <div class="feature-v2-icon"><img src="/Watermelon Company.png" alt="Icon" style="width: 2rem; height: 2rem;"></div>
+                <div class="feature-v2-icon"></div>
                 <h3>Giveaways</h3>
-                <p>Win amazing prizes with our giveaways (Discord Nitro, Robux, Private code with Owners and more!.</p>
+                <p>Win amazing prizes with our giveaways (Discord Nitro, Robux, Private code with Owners and more!</p>
             </div>
             <div class="feature-v2-card">
-                <div class="feature-v2-icon"><img src="/Watermelon Company.png" alt="Icon" style="width: 2rem; height: 2rem;"></div>
+                <div class="feature-v2-icon"></div>
                 <h3>Great Staff Team</h3>
-                <p>We have a great staff team and we ensure the staff team treats everyone equaly</p>
+                <p>We have a great staff team and we ensure the staff team treats everyone equally</p>
             </div>
             <div class="feature-v2-card">
-                <div class="feature-v2-icon"><img src="/Watermelon Company.png" alt="Icon" style="width: 2rem; height: 2rem;"></div>
+                <div class="feature-v2-icon"></div>
                 <h3>Open Mind</h3>
-                <p>We treat everyone equaly, staff or members</p>
+                <p>We treat everyone equally, staff or members</p>
             </div>
         </div>
     </section>
 
-    <section id="showcase" class="showcase">
-        <div class="section-header">
-            <h2>Showcase</h2>
-            <p>See Watermelon Company in action</p>
-        </div>
+    <section class="showcase" id="showcase">
+        <div class="section-header"><h2>Showcase</h2></div>
         <div class="showcase-content">
             <div class="video-container">
-                <video controls width="480" height="480">
-                    <source src="/watermelon_trailer.mp4" type="video/mp4">
+                <video controls poster="Assets/Watermelon Company.png">
+                    <source src="Assets/watermelon_trailer.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="faq">
-        <div class="section-header">
-            <h2>FAQ</h2>
-            <p>Frequently Asked Questions</p>
-        </div>
+    <section class="faq" id="faq">
+        <div class="section-header"><h2>Frequently Asked Questions</h2></div>
         <div class="faq-grid">
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Do we do Mod Applications?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, but they are not open/rarely opened, we do host Mod Applications when needed, but not in every occasions</p>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">Do we do Mod Applications?</div>
+                <div class="faq-answer">Yes, but they are not open/rarely opened, we do host Mod Applications when needed, but not in every occasion</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Will there be griefers</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Sadly, Yes, some people find it funny to grief and annoy other people, these people are also those who end up being bullied in real life (most of time)</p>
-                </div>
+                <div class="faq-question" onclick="toggleFAQ(this)">Will there be griefers</div>
+                <div class="faq-answer">Sadly, Yes, some people find it funny to grief and annoy other people, these people are also those who end up being bullied in real life (most of the time)</div>
             </div>
-                        <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">
-                    <h3>Is the server safe?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
-                <div class="faq-answer">
-                    <p>Yes, the server is well secured by the Co-Owner, we have implimented maximum security for the user's safety, we have added backups incase of nukes and way more, to make sure that everyone is safe and happy in the server</p>
-                </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">Is the server safe?</div>
+                <div class="faq-answer">Yes, the server is well secured by the Co-Owner, we have implemented maximum security for the user's safety, we have added backups in case of nukes and way more, to make sure that everyone is safe and happy in the server</div>
             </div>
+        </div>
+    </section>
+
+    <section class="tools" id="tools">
+        <div class="section-header"><h2>Tools</h2></div>
+        <div class="tool-card">
+            <h3>BEST FREE SCRIPT AUTO FARM</h3>
+            <p>AUTO PLANT AUTO SELL AND...</p>
+            <span>Verified</span> <span>Key System</span>
+            <p>[Grow a garden]</p>
+            <button class="btn-primary" onclick="window.location.href='Tabs/Tools.html'">Copy Script</button>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="/Watermelon Company.png" alt="Watermelon Logo" class="footer-logo">
-                <p>The juiciest community around!</p>
+                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="footer-logo">
+                <h3>Watermelon Company</h3>
             </div>
-            <div class="footer-links">
-                <div class="footer-section">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                    <a href="#showcase">Showcase</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <a href="#faq">FAQ</a>
-                    <a href="https://discord.gg/watermeloncompany">Discord</a>
-                </div>
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="#features">Features</a>
+                <a href="#showcase">Showcase</a>
+                <h4>Support</h4>
+                <a href="#faq">FAQ</a>
+                <a href="https://discord.gg/example">Discord</a>
             </div>
             <div class="footer-social">
                 <h4>Connect With Us</h4>
-                <div class="social-links">
-                    <a href="#" class="social-link"><img src="/Watermelon Company.png" alt="Twitter" style="width: 1.2rem; height: 1.2rem;"></a>
-                    <a href="#" class="social-link"><img src="/Watermelon Company.png" alt="Discord" style="width: 1.2rem; height: 1.2rem;"></a>
-                </div>
+                <a href="https://twitter.com/example" class="social-link"></a>
+                <a href="https://youtube.com/example" class="social-link"></a>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p class="copyright">© 2025 Watermelon Company. All rights reserved.</p>
-        </div>
+        <p>© 2025 Watermelon Company. All rights reserved.</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>
-        async function fetchMemberCount() {
-            const inviteCode = 'watermeloncompany';
-            try {
-                const response = await fetch(`https://discord.com/api/v9/invites/${inviteCode}?with_counts=true`);
-                const data = await response.json();
-                const memberCount = data.approximate_member_count || 'N/A';
-                document.querySelector('.stat-value[data-value="0"]').textContent = memberCount.toLocaleString() + 'k';
-            } catch (error) {
-                document.querySelector('.stat-value[data-value="0"]').textContent = 'Error';
-                console.error('Error:', error);
-            }
-        }
-
-        window.onload = fetchMemberCount;
-    </script>
 </body>
 </html>
