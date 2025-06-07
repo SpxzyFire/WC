@@ -10,23 +10,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        .tools {
+        .tools-container {
             min-height: 80vh;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 2rem;
-            flex-wrap: wrap;
+            padding: 2rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            align-items: start;
         }
-        .script-card {
-            flex: 0 0 45%; /* Allows two cards side by side with some flexibility */
-            max-width: 400px;
-            padding: 1rem;
-            text-align: center;
+        .tool-card {
             background: var(--black-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-card h3 {
+            font-size: 1.8rem;
+            color: #FF4444;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+        .tool-card p {
+            color: var(--text-secondary);
+            margin: 0.4rem 0;
+        }
+        .tool-card .tool-description {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin: 0.6rem 0;
+        }
+        .tool-card .badges {
+            margin: 0.4rem 0;
+        }
+        .tool-card .badges .badge {
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+        }
+        .tool-card a {
+            display: block;
+            margin-top: 0.6rem;
+        }
+        .date-display {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 1rem 0;
         }
     </style>
 </head>
@@ -55,44 +91,46 @@
         </div>
     </nav>
 
-    <section class="tools" id="tools">
-        <div class="script-card">
-            <h3 style="font-size: 2rem; color: #FF4444; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif;">KAHOOT BOT SENDER</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem;">90741</p>
+    <div class="date-display">Current Date: June 07, 2025, 03:51 PM EDT</div>
+
+    <div class="tools-container">
+        <div class="tool-card">
+            <h3>KAHOOT BOT SENDER</h3>
+            <p>Code: 90741</p>
             <div class="image-container">
-                <img src="Assets/kahoot.png" alt="Tool Image" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                <img src="Assets/kahoot.png" alt="Kahoot Tool" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
             </div>
-            <p style="font-size: 1.2rem; color: var(--text-primary); margin: 0.6rem 0;">Easy to use and Working Kahoot Bot Sender</p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">Updated : 2025 June 7th</p>
-            <div class="script-badges" style="margin: 0.4rem 0;">
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">Verified</span>
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">8/10 Ragebait</span>
+            <p class="tool-description">Easy to use and working Kahoot bot sender</p>
+            <p>Updated: June 07, 2025</p>
+            <div class="badges">
+                <span class="badge verified">Verified</span>
+                <span class="badge verified">8/10 Ragebait</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">kahoot.it</p>
-            <a href="https://watermelon-company.vercel.app/kahootbots.html" target="_blank" class="copy-btn" style="margin-top: 0.6rem; display: inline-flex; align-items: center; justify-content: center;">
+            <p>Link: kahoot.it</p>
+            <a href="https://watermelon-company.vercel.app/kahootbots.html" target="_blank" class="copy-btn">
                 <span>Use Tool</span>
             </a>
-            <a href="index.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back</a>
+            <a href="index.html" class="btn-outline">Back</a>
         </div>
-        <div class="script-card">
-            <h3 style="font-size: 2rem; color: #FF4444; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif;">AUTO FARM TOOL</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem;">90742</p>
+        <div class="tool-card">
+            <h3>AUTO FARM TOOL</h3>
+            <p>Code: 90742</p>
             <div class="image-container">
-                <img src="Assets/farm.png" alt="Tool Image" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+                <img src="Assets/farm.png" alt="Farm Tool" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
             </div>
-            <p style="font-size: 1.2rem; color: var(--text-primary); margin: 0.6rem 0;">Efficient Auto Farming Solution</p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">Updated : 2025 June 7th</p>
-            <div class="script-badges" style="margin: 0.4rem 0;">
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">Verified</span>
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">7/10 Efficiency</span>
+            <p class="tool-description">Efficient auto farming solution</p>
+            <p>Updated: June 07, 2025</p>
+            <div class="badges">
+                <span class="badge verified">Verified</span>
+                <span class="badge verified">7/10 Efficiency</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">farm.game</p>
-            <a href="https://watermelon-company.vercel.app/autofarm.html" target="_blank" class="copy-btn" style="margin-top: 0.6rem; display: inline-flex; align-items: center; justify-content: center;">
+            <p>Link: farm.game</p>
+            <a href="https://watermelon-company.vercel.app/autofarm.html" target="_blank" class="copy-btn">
                 <span>Use Tool</span>
             </a>
-            <a href="index.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back</a>
+            <a href="index.html" class="btn-outline">Back</a>
         </div>
-    </section>
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
