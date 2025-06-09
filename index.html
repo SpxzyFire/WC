@@ -29,8 +29,8 @@
                 <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" class="brand-logo">
             </div>
             <div class="nav-menu">
-                <a href="https://watermelon-company.vercel.app/" class="nav-item">Features</a>
-                <a href="https://watermelon-company.vercel.app/tools.html" target="_blank" class="nav-item">Tools</a>
+                <a href="https://watermelon-company.vercel.app/" class="nav-item" onclick="navigateTo('https://watermelon-company.vercel.app/')">Features</a>
+                <a href="https://watermelon-company.vercel.app/tools.html" class="nav-item" onclick="navigateTo('https://watermelon-company.vercel.app/tools.html')">Tools</a>
             </div>
             <div class="nav-actions">
                 <a href="https://discord.gg/watermeloncompany" class="btn-discord">Join Discord</a>
@@ -135,7 +135,7 @@
             <span class="badge verified">Verified <i class="fa fa-check"></i></span>
             <span class="badge key-system">Key System</span>
             <p>[Grow a garden]</p>
-            <a href="https://watermelon-company.vercel.app/tools.html" target="_blank" class="btn-primary">Copy Script</a>
+            <a href="https://watermelon-company.vercel.app/tools.html" class="btn-primary">Copy Script</a>
         </div>
     </section>
 
@@ -163,6 +163,11 @@
     </footer>
 
     <script>
+        // Navigate function to ensure redirection
+        function navigateTo(url) {
+            window.location.href = url;
+        }
+
         // Loader functionality from styles2.css
         window.onload = function () {
             setTimeout(function () {
