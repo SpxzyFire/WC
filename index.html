@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Watermelon Company</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="background-effects">
@@ -17,14 +19,18 @@
         </div>
     </div>
 
+    <div class="website-loader">
+        <div class="loader-container"></div>
+    </div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="brand-logo">
+                <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" class="brand-logo">
             </div>
             <div class="nav-menu">
-                <a href="#features" class="nav-item">Features</a>
-                <a href="tools.html" target="_blank" class="nav-item">Tools</a>
+                <a href="https://watermelon-company.vercel.app/" class="nav-item">Features</a>
+                <a href="https://watermelon-company.vercel.app/tools.html" target="_blank" class="nav-item">Tools</a>
             </div>
             <div class="nav-actions">
                 <a href="https://discord.gg/watermeloncompany" class="btn-discord">Join Discord</a>
@@ -39,7 +45,7 @@
                 <h1 class="hero-title"><span class="gradient-text">Welcome to Watermelon Company</span></h1>
                 <p class="hero-description">Join our juicy community and enjoy the sweetest Discord experience!</p>
                 <div class="hero-stats">
-                    <div class="stat-card"><div class="stat-value" data-value="0">0</div><div class="stat-label">Active Members</div></div>
+                    <div class="stat-card"><div class="stat-value" id="active-members">0</div><div class="stat-label">Active Members</div></div>
                 </div>
                 <div class="hero-actions">
                     <a href="https://discord.gg/watermeloncompany" class="btn-primary">Join Now</a>
@@ -95,7 +101,7 @@
         <div class="section-header"><h2>Showcase</h2></div>
         <div class="showcase-content">
             <div class="video-container">
-                <video controls poster="Assets/Watermelon Company.png">
+                <video controls poster="Assets/Watermelon_Company.png">
                     <source src="Assets/watermelon_trailer.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -111,7 +117,7 @@
                 <div class="faq-answer">Yes, but they are not open/rarely opened, we do host Mod Applications when needed, but not in every occasion</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">Will there be griefers</div>
+                <div class="faq-question" onclick="toggleFAQ(this)">Will there be griefers?</div>
                 <div class="faq-answer">Sadly, Yes, some people find it funny to grief and annoy other people, these people are also those who end up being bullied in real life (most of the time)</div>
             </div>
             <div class="faq-item">
@@ -126,35 +132,88 @@
         <div class="tool-card">
             <h3>BEST FREE SCRIPT AUTO FARM</h3>
             <p>AUTO PLANT AUTO SELL AND...</p>
-            <span>Verified</span> <span>Key System</span>
+            <span class="badge verified">Verified <i class="fa fa-check"></i></span>
+            <span class="badge key-system">Key System</span>
             <p>[Grow a garden]</p>
-            <a href="tools.html" target="_blank" class="btn-primary">Copy Script</a>
+            <a href="https://watermelon-company.vercel.app/tools.html" target="_blank" class="btn-primary">Copy Script</a>
         </div>
     </section>
 
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="footer-logo">
+                <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" class="footer-logo">
                 <h3>Watermelon Company</h3>
             </div>
             <div class="footer-section">
                 <h4>Product</h4>
-                <a href="#features">Features</a>
+                <a href="https://watermelon-company.vercel.app/">Features</a>
                 <a href="#showcase">Showcase</a>
                 <h4>Support</h4>
                 <a href="#faq">FAQ</a>
-                <a href="https://discord.gg/example">Discord</a>
+                <a href="https://discord.gg/watermeloncompany">Discord</a>
             </div>
             <div class="footer-social">
                 <h4>Connect With Us</h4>
-                <a href="https://twitter.com/example" class="social-link"></a>
-                <a href="https://youtube.com/example" class="social-link"></a>
+                <a href="https://twitter.com/example" class="social-link">Twitter</a>
+                <a href="https://youtube.com/example" class="social-link">YouTube</a>
             </div>
         </div>
         <p>© 2025 Watermelon Company. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Loader functionality from styles2.css
+        window.onload = function () {
+            setTimeout(function () {
+                document.querySelector(".website-loader").classList.add("hide");
+            }, 1000);
+        };
+
+        // Navbar scroll behavior from styles.css
+        let lastScrollTop = 0;
+        const navbar = document.querySelector(".navbar");
+        window.addEventListener("scroll", function () {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.classList.add("scroll-down");
+                navbar.classList.remove("scroll-up");
+            } else {
+                navbar.classList.add("scroll-up");
+                navbar.classList.remove("scroll-down");
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // FAQ toggle functionality
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const faqAnswer = faqItem.querySelector(".faq-answer");
+            const isActive = faqItem.classList.contains("active");
+            document.querySelectorAll(".faq-item").forEach(item => {
+                item.classList.remove("active");
+                item.querySelector(".faq-answer").style.maxHeight = "0";
+            });
+            if (!isActive) {
+                faqItem.classList.add("active");
+                faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+            }
+        }
+
+        // Fetch Discord member count
+        fetch('https://discord.com/api/v10/invites/watermeloncompany?with_counts=true')
+            .then(response => response.json())
+            .then(data => {
+                if (data.approximate_member_count) {
+                    document.getElementById('active-members').textContent = data.approximate_member_count.toLocaleString();
+                } else {
+                    document.getElementById('active-members').textContent = 'N/A';
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching Discord member count:', error);
+                document.getElementById('active-members').textContent = 'N/A';
+            });
+    </script>
 </body>
 </html>
