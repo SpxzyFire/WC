@@ -1,105 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watermelon Company Tools</title>
-        <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools | Watermelon Company</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles2.css">
 </head>
 <body>
-    <div class="background-effects">
-        <div class="grid-lines"></div>
-        <div class="glow-orbs">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
+  <!-- Background Effects from styles.css -->
+  <div class="background-effects">
+    <div class="grid-lines"></div>
+    <div class="glow-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
+  </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="brand-logo">
-            </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="tools.html" class="nav-item">Tools</a>
-            </div>
-            <div class="nav-actions">
-                <a href="https://discord.gg/example" class="btn-discord">Join Discord</a>
-            </div>
-        </div>
-    </nav>
+  <!-- Website Loader from styles2.css -->
+  <div class="website-loader">
+    <div class="loader-container"></div>
+  </div>
 
-    <section class="tools" id="tools" style="min-height: 80vh; display: flex; justify-content: center; align-items: center;">
-        <div class="script-card" style="max-width: 400px; padding: 1rem; text-align: center; background: var(--black-secondary);">
-            <h3 style="font-size: 2rem; color: #FF4444; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif;">KAHOOT BOT SENDER</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem;">90741</p>
-            <div class="image-container">
-                <img src="Assets/kahoot.png" alt="Tool Image" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+  <!-- Navbar from styles.css -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="Assets/kahoot.png" alt="Watermelon Company Logo" class="brand-logo">
+      </div>
+      <div class="nav-menu">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="tools.html" class="nav-item active">Tools</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://discord.gg/example" class="btn-discord">Join Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Tools Section -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Tools</h2>
+      </div>
+      <div class="scripts-grid">
+        <!-- Tool 1 -->
+        <div class="script-card">
+          <div class="image-container">
+            <img src="Assets/kahoot.png" alt="Kahoot Tool">
+            <div class="script-views">
+              <i class="fa fa-eye"></i> Tool 1
             </div>
-            <p style="font-size: 1.2rem; color: var(--text-primary); margin: 0.6rem 0;">Easy to use and Working Kahoot Bot Sender</p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">Updated : 2025 June 7th</p>
-            <div class="script-badges" style="margin: 0.4rem 0;">
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">Verified</span>
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">8/10 Troll</span>
+          </div>
+          <div class="script-info">
+            <h3>KAHOOT BOT SENDER</h3>
+            <div class="script-description">Easy to use and working Kahoot Bot Sender</div>
+            <p>Updated: 2025 June 7th</p>
+            <p>kahoot.it</p>
+            <div class="script-badges">
+              <span class="badge verified">Verified <i class="fa fa-check"></i></span>
+              <span class="badge">8/10 Troll</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">kahoot.it</p>
-            <a href="https://watermelon-company.vercel.app/kahootbots.html" target="_blank" class="copy-btn" style="margin-top: 0.6rem; display: inline-flex; align-items: center; justify-content: center;">
-                <span>Use Tool</span>
+            <a href="https://watermelon-company.vercel.app/kahootbots.html" class="copy-btn" target="_blank">
+              <i class="fa fa-link"></i> <span>Use Tool</span>
             </a>
-            <a href="index.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back</a>
+            <a href="index.html" class="btn-outline">Back</a>
+          </div>
         </div>
-    </section>
 
-    
-    <section class="tools" id="tools" style="min-height: 80vh; display: flex; justify-content: center; align-items: center;">
-        <div class="script-card" style="max-width: 400px; padding: 1rem; text-align: center; background: var(--black-secondary);">
-            <h3 style="font-size: 2rem; color: #FF4444; margin-bottom: 0.5rem; font-family: 'Orbitron', sans-serif;">KAHOOT BOT SENDER</h3>
-            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.6rem;">90741</p>
-            <div class="image-container">
-                <img src="Assets/kahoot.png" alt="Tool Image" style="width: 100%; height: 120px; object-fit: cover; border-radius: 8px;">
+        <!-- Tool 2 -->
+        <div class="script-card">
+          <div class="image-container">
+            <img src="Assets/kahoot.png" alt="Kahoot Tool">
+            <div class="script-views">
+              <i class="fa fa-eye"></i> Tool 2
             </div>
-            <p style="font-size: 1.2rem; color: var(--text-primary); margin: 0.6rem 0;">Easy to use and Working Kahoot Bot Sender</p>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">Updated : 2025 June 7th</p>
-            <div class="script-badges" style="margin: 0.4rem 0;">
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">Verified</span>
-                <span class="badge verified" style="padding: 0.2rem 0.5rem; font-size: 0.75rem;">8/10 Ragebait</span>
+          </div>
+          <div class="script-info">
+            <h3>KAHOOT BOT SENDER</h3>
+            <p>ID: 90741</p>
+            <div class="script-description">Easy to use and working Kahoot Bot Sender</div>
+            <p>Updated: 2025 June 7th</p>
+            <p>kahoot.it</p>
+            <div class="script-badges">
+              <span class="badge verified">Verified <i class="fa fa-check"></i></span>
+              <span class="badge">8/10 Ragebait</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0.4rem 0;">kahoot.it</p>
-            <a href="https://watermelon-company.vercel.app/kahootbots.html" target="_blank" class="copy-btn" style="margin-top: 0.6rem; display: inline-flex; align-items: center; justify-content: center;">
-                <span>Use Tool</span>
+            <a href="https://watermelon-company.vercel.app/kahootbots.html" class="copy-btn" target="_blank">
+              <i class="fa fa-link"></i> <span>Use Tool</span>
             </a>
-            <a href="index.html" class="btn-outline" style="display: block; margin-top: 0.6rem; padding: 0.6rem; text-align: center; width: 100%;">Back</a>
+            <a href="index.html" class="btn-outline">Back</a>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="Assets/Watermelon Company.png" alt="Watermelon Company Logo" class="footer-logo">
-                <h3>Watermelon Company</h3>
-            </div>
-            <div class="footer-section">
-                <h4>Product</h4>
-                <a href="index.html#case">Case</a>
-                <a href="tools.html">Tools</a>
-                <h4>Support</h4>
-                <a href="https://discord.gg/example">Discord</a>
-            </div>
-            <div class="footer-social">
-                <h4>Connect With Us</h4>
-                <a href="https://twitter.com/example" class="social-link"></a>
-                <a href="https://youtube.com/example" class="social-link"></a>
-            </div>
-        </div>
-        <p>© 2025 Watermelon Company. All rights reserved.</p>
-    </footer>
+  <!-- Footer from styles.css -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="Assets/kahoot.png" alt="Watermelon Company Logo" class="footer-logo">
+        <h3>Watermelon Company</h3>
+      </div>
+      <div class="footer-section">
+        <h4>Product</h4>
+        <a href="#features">Features</a>
+        <a href="#tools">Tools</a>
+        <h4>Support</h4>
+        <a href="#faq">FAQ</a>
+        <a href="https://discord.gg/example">Discord</a>
+      </div>
+      <div class="footer-social">
+        <h4>Connect With Us</h4>
+        <a href="https://twitter.com/example" class="social-link">Twitter</a>
+        <a href="https://youtube.com/example" class="social-link">YouTube</a>
+      </div>
+    </div>
+    <p>© 2025 Watermelon Company. All rights reserved.</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script>
+    // Loader functionality from styles2.css
+    window.onload = function () {
+      setTimeout(function () {
+        document.querySelector(".website-loader").classList.add("hide");
+      }, 1000);
+    };
+
+    // Navbar scroll behavior from styles.css
+    let lastScrollTop = 0;
+    const navbar = document.querySelector(".navbar");
+    window.addEventListener("scroll", function () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        navbar.classList.add("scroll-down");
+        navbar.classList.remove("scroll-up");
+      } else {
+        navbar.classList.add("scroll-up");
+        navbar.classList.remove("scroll-down");
+      }
+      lastScrollTop = scrollTop;
+    });
+  </script>
 </body>
 </html>
