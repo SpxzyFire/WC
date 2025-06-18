@@ -1,5 +1,6 @@
+// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -7,6 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Navbar scroll direction animation
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
@@ -25,27 +27,11 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scroll-down');
         navbar.classList.add('scroll-up');
     }
+
     lastScroll = currentScroll;
 });
 
-const bars = document.querySelectorAll('.bar-fill');
-
-const animatePerformance = (entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            bars.forEach(bar => {
-                bar.style.width = bar.dataset.width || '90%';
-                bar.style.opacity = 1;
-            });
-            observer.unobserve(entry.target);
-        }
-    });
-};
-
-const performanceObserver = new IntersectionObserver(animatePerformance, {
-    threshold: 0.5
-});
-
+// Feature card hover effects
 const featureCards = document.querySelectorAll('.feature-v2-card');
 
 featureCards.forEach(card => {
@@ -60,20 +46,24 @@ featureCards.forEach(card => {
     });
 });
 
+// Tool card icon hover effect
 const toolCards = document.querySelectorAll('.tool-card');
 
 toolCards.forEach(card => {
     const icon = card.querySelector('.tool-icon');
 
-    card.addEventListener('mouseenter', () => {
-        icon.style.transform = 'scale(1.1) rotate(5deg)';
-    });
+    if (icon) {
+        card.addEventListener('mouseenter', () => {
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+        });
 
-    card.addEventListener('mouseleave', () => {
-        icon.style.transform = 'scale(1) rotate(0)';
-    });
+        card.addEventListener('mouseleave', () => {
+            icon.style.transform = 'scale(1) rotate(0)';
+        });
+    }
 });
 
+// Animate stats on scroll
 document.addEventListener('DOMContentLoaded', () => {
     const stats = document.querySelectorAll('.stat-value');
 
@@ -81,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const target = entry.target;
-                const value = parseInt(target.dataset.value);
+                const value = parseInt(target.dataset.value || target.textContent);
                 let current = 0;
 
                 const updateCounter = () => {
@@ -108,6 +98,26 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(stat => statsObserver.observe(stat));
 });
 
+// Animate performance bars (if used)
+const bars = document.querySelectorAll('.bar-fill');
+
+const animatePerformance = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            bars.forEach(bar => {
+                bar.style.width = bar.dataset.width || '90%';
+                bar.style.opacity = 1;
+            });
+            observer.unobserve(entry.target);
+        }
+    });
+};
+
+const performanceObserver = new IntersectionObserver(animatePerformance, {
+    threshold: 0.5
+});
+
+// FAQ toggle
 function toggleFAQ(element) {
     const faqItem = element.parentElement;
     const isActive = faqItem.classList.contains('active');
@@ -120,3 +130,35 @@ function toggleFAQ(element) {
         faqItem.classList.add('active');
     }
 }
+
+// Fetch and animate Discord member count
+async function updateMemberCount() {
+    const element = document.getElementById('active-members');
+    try {
+        const response = await fetch('https://api.watermeloncompany.com/membercount'); // Replace with actual API endpoint
+        const data = await response.json();
+        const count = parseInt(data.count);
+
+        // Animate count
+        let current = 0;
+        const increment = count / 50;
+
+        const animate = () => {
+            if (current < count) {
+                current += increment;
+                element.textContent = Math.ceil(current);
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = count;
+            }
+        };
+
+        animate();
+    } catch (error) {
+        console.error('Failed to fetch member count:', error);
+        element.textContent = 'N/A';
+    }
+}
+
+// Trigger on page load
+document.addEventListener('DOMContentLoaded', updateMemberCount);
