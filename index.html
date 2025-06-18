@@ -1,141 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watermelon Company</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles2.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watermelon Company</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles2.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Orbitron:wght@500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
 <body>
-    <div class="background-effects">
-        <div class="grid-lines"></div>
-        <div class="glow-orbs">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
+  <div class="background-effects">
+    <div class="grid-lines"></div>
+    <div class="glow-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
     </div>
+  </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" class="brand-logo">
-            </div>
-            <div class="nav-menu">
-                <a href="https://watermelon-company.vercel.app/" class="nav-item">Features</a>
-                <a href="https://watermelon-company.vercel.app/tools.html" class="nav-item">Tools</a>
-            </div>
-            <div class="nav-actions">
-                <a href="https://discord.gg/watermeloncompany" class="btn-discord">Join Discord</a>
-            </div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" class="brand-logo" />
+      </div>
+      <div class="nav-menu">
+        <a href="https://watermelon-company.vercel.app/" class="nav-item">Features</a>
+        <a href="https://watermelon-company.vercel.app/tools.html" class="nav-item">Tools</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://discord.gg/watermeloncompany" class="btn-discord">Join Discord</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div>
+        <div class="hero-badge"><span class="badge-glow"></span>Most Advanced Community</div>
+        <h1 class="hero-title"><span class="gradient-text">Welcome to Watermelon Company</span></h1>
+        <p class="hero-description">Join our juicy community and enjoy the sweetest Discord experience!</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value" id="active-members">0</div>
+            <div class="stat-label">Active Members</div>
+          </div>
         </div>
-    </nav>
-
-    <section class="hero" id="hero">
-        <div class="hero-container">
-            <div>
-                <div class="hero-badge"><span class="badge-glow"></span>Most Advanced Community</div>
-                <h1 class="hero-title"><span class="gradient-text">Welcome to Watermelon Company</span></h1>
-                <p class="hero-description">Join our juicy community and enjoy the sweetest Discord experience!</p>
-                <div class="hero-stats">
-                    <div class="stat-card"><div class="stat-value" id="active-members">0</div><div class="stat-label">Active Members</div></div>
-                </div>
-                <div class="hero-actions">
-                    <a href="https://discord.gg/watermeloncompany" class="btn-primary">Join Now</a>
-                    <a href="#showcase" class="btn-outline">Watch Demo</a>
-                </div>
-            </div>
-            <div class="code-preview">
-                <div class="preview-header">main.lua</div>
-                <div class="preview-editor">
-                    <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
-                    <div class="code-content">
-                        -- Initialize Watermelon<br>
-                        local watermelon = require("watermelon")<br>
-                        -- Configure settings<br>
-                        watermelon.config({<br>
-                            theme = "juicy"<br>
-                        })<br>
-                        -- Execute fun<br>
-                        local success = watermelon:execute(script)
-                    </div>
-                </div>
-            </div>
+        <div class="hero-actions">
+          <a href="https://discord.gg/watermeloncompany" class="btn-primary">Join Now</a>
+          <a href="#showcase" class="btn-outline">Watch Demo</a>
         </div>
-    </section>
-
-    <section class="features-v2" id="features">
-        <div class="section-header"><h2>Features</h2></div>
-        <div class="features-v2-grid">
-            <div class="feature-v2-card">
-                <div class="feature-v2-icon"></div>
-                <h3>Active Money/Giveaway Codes</h3>
-                <p>We host more than 5-10 codes per day!</p>
-            </div>
-            <div class="feature-v2-card">
-                <div class="feature-v2-icon"></div>
-                <h3>Giveaways</h3>
-                <p>Win amazing prizes with our giveaways (Discord Nitro, Robux, Private code with Owners and more!</p>
-            </div>
-            <div class="feature-v2-card">
-                <div class="feature-v2-icon"></div>
-                <h3>Great Staff Team</h3>
-                <p>We have a great staff team and we ensure the staff team treats everyone equally</p>
-            </div>
-            <div class="feature-v2-card">
-                <div class="feature-v2-icon"></div>
-                <h3>Open Mind</h3>
-                <p>We treat everyone equally, staff or members</p>
-            </div>
+      </div>
+      <div class="code-preview">
+        <div class="preview-header">main.lua</div>
+        <div class="preview-editor">
+          <div class="line-numbers">1<br>2<br>3<br>4<br>5</div>
+          <div class="code-content">
+            -- Initialize Watermelon<br>
+            local watermelon = require("watermelon")<br>
+            -- Configure settings<br>
+            watermelon.config({<br>
+              theme = "juicy"<br>
+            })<br>
+            -- Execute fun<br>
+            local success = watermelon:execute(script)
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="showcase" id="showcase">
-        <div class="section-header"><h2>Showcase</h2></div>
-        <div class="showcase-content">
-            <div class="video-container">
-                <video controls poster="Assets/Watermelon_Company.png">
-                    <source src="Assets/watermelon_trailer.mov" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-    </section>
+  <section class="features-v2" id="features">
+    <div class="section-header"><h2>Features</h2></div>
+    <div class="features-v2-grid">
+      <div class="feature-v2-card">
+        <div class="feature-v2-icon"></div>
+        <h3>Active Money/Giveaway Codes</h3>
+        <p>We host more than 5-10 codes per day!</p>
+      </div>
+      <div class="feature-v2-card">
+        <div class="feature-v2-icon"></div>
+        <h3>Giveaways</h3>
+        <p>Win amazing prizes with our giveaways (Discord Nitro, Robux, Private code with Owners and more!)</p>
+      </div>
+      <div class="feature-v2-card">
+        <div class="feature-v2-icon"></div>
+        <h3>Great Staff Team</h3>
+        <p>We have a great staff team and we ensure the staff team treats everyone equally</p>
+      </div>
+      <div class="feature-v2-card">
+        <div class="feature-v2-icon"></div>
+        <h3>Open Mind</h3>
+        <p>We treat everyone equally, staff or members</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="faq" id="faq">
-        <div class="section-header"><h2>Frequently Asked Questions</h2></div>
-        <div class="faq-grid">
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">Do we do Mod Applications?</div>
-                <div class="faq-answer">Yes, but they are not open/rarely opened, we do host Mod Applications when needed, but not in every occasion</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">Will there be griefers?</div>
-                <div class="faq-answer">Sadly, Yes, some people find it funny to grief and annoy other people, these people are also those who end up being bullied in real life (most of the time)</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFAQ(this)">Is the server safe?</div>
-                <div class="faq-answer">Yes, the server is well secured by the Co-Owner, we have implemented maximum security for the user's safety, we have added backups in case of nukes and way more, to make sure that everyone is safe and happy in the server</div>
-            </div>
-        </div>
-    </section>
+  <section class="showcase" id="showcase">
+    <div class="section-header"><h2>Showcase</h2></div>
+    <div class="showcase-content">
+      <div class="video-container">
+        <video controls poster="Assets/Watermelon_Company.png">
+          <source src="Assets/watermelon_trailer.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
 
-    <section class="tools" id="tools">
-        <div class="section-header"><h2>Tools</h2></div>
-        <div class="tool-card">
-            <h3>BEST FREE SCRIPT AUTO FARM</h3>
-            <p>AUTO PLANT AUTO SELL AND...</p>
-            <span class="badge verified">Verified <i class="fa fa-check"></i></span>
-            <span class="badge key-system">Key System</span>
-            <p>[Grow a garden]</p>
-            <a href="https://watermelon-company.vercel.app/tools.html" class="btn-primary">Copy Script</a>
-        </div>
-    </section>
+  <section class="faq" id="faq">
+    <div class="section-header"><h2>Frequently Asked Questions</h2></div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Do we do Mod Applications?</div>
+        <div class="faq-answer">Yes, but they are not open/rarely opened. We host Mod Applications when needed, but not on every occasion.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Will there be griefers?</div>
+        <div class="faq-answer">Sadly, yes. Some people find it funny to grief, but our team handles them swiftly and professionally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">Is the server safe?</div>
+        <div class="faq-answer">Yes. Our Co-Owner has implemented maximum security, regular backups, and other protective measures.</div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img src="Assets/Watermelon_Company.png" alt="Wate_
+  <section class="tools" id="tools">
+    <div class="section-header"><h2>Tools</h2></div>
+    <div class="tool-card">
+      <h3>BEST FREE SCRIPT AUTO FARM</h3>
+      <p>AUTO PLANT AUTO SELL AND...</p>
+      <span class="badge verified">Verified <i class="fa fa-check"></i></span>
+      <span class="badge key-system">Key System</span>
+      <p>[Grow a garden]</p>
+      <a href="https://watermelon-company.vercel.app/tools.html" class="btn-primary">Copy Script</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <img src="Assets/Watermelon_Company.png" alt="Watermelon Company Logo" />
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#tools">Tools</a>
+        <a href="#faq">FAQ</a>
+        <a href="#showcase">Showcase</a>
+      </div>
+      <div class="footer-rights">
+        &copy; 2025 Watermelon Company. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Member Count Script -->
+  <script>
+    async function updateMemberCount() {
+      try {
+        const response = await fetch('https://api.watermeloncompany.com/membercount'); // Replace with your actual endpoint
+        const data = await response.json();
+        document.getElementById('active-members').textContent = data.count;
+      } catch (error) {
+        console.error('Failed to fetch member count:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', updateMemberCount);
+  </script>
+</body>
+</html>
